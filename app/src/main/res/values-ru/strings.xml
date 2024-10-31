@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">task2</string>
+    <string name="hello_user">Привет Юзверь!</string>
+    <string name="nametext">Введите Имя</string>
+    <string name="button">Добро Пожаловать!</string>
+    <string name="Calc">К калькулятору</string>
+</resources>

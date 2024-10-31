@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">task2</string>
+    <string name="hello_user">Hello User!</string>
+    <string name="nametext">Enter Name</string>
+    <string name="button">Welcome</string>
+    <string name="Calc">To Calculator</string>
+    <string name="title_activity_main2">MainActivity2</string>
+</resources>
