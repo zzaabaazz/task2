@@ -5,16 +5,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+/*import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.task2.ui.theme.Task2Theme
+import androidx.compose.ui.Modifier*/
 
 class Calculator : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,37 +25,57 @@ class Calculator : ComponentActivity() {
             }
         }*/
         val Result = findViewById<TextView>(R.id.TextResult)
-        var ResultNum: Int? = null
+        var ResultNum: Float?
         val Num1Block = findViewById<EditText>(R.id.Num1)
-        val Num2Block = findViewById<EditText>(R.id.Num2)
+        val num2Block = findViewById<EditText>(R.id.Num2)
         val buttonPlus = findViewById<Button>(R.id.buttonPlus)
-
+        val buttonMinus = findViewById<Button>(R.id.buttonMinus)
+        val buttonMulti = findViewById<Button>(R.id.buttonMulti)
+        val buttonDivide = findViewById<Button>(R.id.buttonDivide)
         buttonPlus.setOnClickListener {
             try {
-                val Num1Value = Num1Block.text.toString().toInt()
-                val Num2Value = Num2Block.text.toString().toInt()
+                val Num1Value = Num1Block.text.toString().toFloat()
+                val Num2Value = num2Block.text.toString().toFloat()
                 ResultNum = Num1Value + Num2Value
                 Result.text = ResultNum.toString()
             } catch (e: NumberFormatException) {
                 // Handle the case where the input is not a valid integer
-                Result.text = "Invalid input"
+                Result.text = getString(R.string.invalid_input)
+            }
+        }
+        buttonMinus.setOnClickListener {
+            try {
+                val Num1Value = Num1Block.text.toString().toFloat()
+                val Num2Value = num2Block.text.toString().toFloat()
+                ResultNum = Num1Value - Num2Value
+                Result.text = ResultNum.toString()
+            } catch (e: NumberFormatException) {
+                // Handle the case where the input is not a valid integer
+                Result.text = getString(R.string.invalid_input)
+            }
+        }
+        buttonMulti.setOnClickListener {
+            try {
+                val Num1Value = Num1Block.text.toString().toFloat()
+                val Num2Value = num2Block.text.toString().toFloat()
+                ResultNum = Num1Value * Num2Value
+                Result.text = ResultNum.toString()
+            } catch (e: NumberFormatException) {
+                // Handle the case where the input is not a valid integer
+                Result.text = getString(R.string.invalid_input)
+            }
+        }
+        buttonDivide.setOnClickListener {
+            try {
+                val Num1Value = Num1Block.text.toString().toFloat()
+                val Num2Value = num2Block.text.toString().toFloat()
+                ResultNum = Num1Value / Num2Value
+                Result.text = ResultNum.toString()
+            } catch (e: NumberFormatException) {
+                // Handle the case where the input is not a valid integer
+                Result.text = getString(R.string.invalid_input)
             }
         }
 
 }
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-/*@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Task2Theme {
-        Greeting("Android")
-    }
-}*/
 }
