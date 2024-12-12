@@ -32,16 +32,23 @@ class Calculator : ComponentActivity() {
             }
         }*/
         val Result = findViewById<TextView>(R.id.TextResult)
-        var ResultNum : Int?
+        var ResultNum: Int? = null
         val Num1Block = findViewById<EditText>(R.id.Num1)
         val Num2Block = findViewById<EditText>(R.id.Num2)
         val buttonPlus = findViewById<Button>(R.id.buttonPlus)
-        val Num1Value = Num1Block.text.toString().toInt()
-        val Num2Value = Num2Block.text.toString().toInt()
+
         buttonPlus.setOnClickListener {
-        ResultNum = Num1Value + Num2Value
-            Result.setText("$ResultNum")
-    }
+            try {
+                val Num1Value = Num1Block.text.toString().toInt()
+                val Num2Value = Num2Block.text.toString().toInt()
+                ResultNum = Num1Value + Num2Value
+                Result.text = ResultNum.toString()
+            } catch (e: NumberFormatException) {
+                // Handle the case where the input is not a valid integer
+                Result.text = "Invalid input"
+            }
+        }
+
 }
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
