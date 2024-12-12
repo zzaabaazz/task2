@@ -24,9 +24,9 @@ class Calculator : ComponentActivity() {
                 }
             }
         }*/
-        val Result = findViewById<TextView>(R.id.TextResult)
-        var ResultNum: Float?
-        val Num1Block = findViewById<EditText>(R.id.Num1)
+        val resultBlock = findViewById<TextView>(R.id.TextResult)
+        var resultNum: Float?
+        val num1Block = findViewById<EditText>(R.id.Num1)
         val num2Block = findViewById<EditText>(R.id.Num2)
         val buttonPlus = findViewById<Button>(R.id.buttonPlus)
         val buttonMinus = findViewById<Button>(R.id.buttonMinus)
@@ -34,46 +34,46 @@ class Calculator : ComponentActivity() {
         val buttonDivide = findViewById<Button>(R.id.buttonDivide)
         buttonPlus.setOnClickListener {
             try {
-                val Num1Value = Num1Block.text.toString().toFloat()
-                val Num2Value = num2Block.text.toString().toFloat()
-                ResultNum = Num1Value + Num2Value
-                Result.text = ResultNum.toString()
+                val num1Value = num1Block.text.toString().toFloat()
+                val num2Value = num2Block.text.toString().toFloat()
+                resultNum = num1Value + num2Value
+                resultBlock.text = resultNum.toString()
             } catch (e: NumberFormatException) {
                 // Handle the case where the input is not a valid integer
-                Result.text = getString(R.string.invalid_input)
+                resultBlock.text = getString(R.string.invalid_input)
             }
         }
         buttonMinus.setOnClickListener {
             try {
-                val Num1Value = Num1Block.text.toString().toFloat()
-                val Num2Value = num2Block.text.toString().toFloat()
-                ResultNum = Num1Value - Num2Value
-                Result.text = ResultNum.toString()
+                val num1Value = num1Block.text.toString().toFloat()
+                val num2Value = num2Block.text.toString().toFloat()
+                resultNum = num1Value - num2Value
+                resultBlock.text = resultNum.toString()
             } catch (e: NumberFormatException) {
                 // Handle the case where the input is not a valid integer
-                Result.text = getString(R.string.invalid_input)
+                resultBlock.text = getString(R.string.invalid_input)
             }
         }
         buttonMulti.setOnClickListener {
             try {
-                val Num1Value = Num1Block.text.toString().toFloat()
-                val Num2Value = num2Block.text.toString().toFloat()
-                ResultNum = Num1Value * Num2Value
-                Result.text = ResultNum.toString()
+                val num1Value = num1Block.text.toString().toFloat()
+                val num2Value = num2Block.text.toString().toFloat()
+                resultNum = num1Value * num2Value
+                resultBlock.text = resultNum.toString()
             } catch (e: NumberFormatException) {
                 // Handle the case where the input is not a valid integer
-                Result.text = getString(R.string.invalid_input)
+                resultBlock.text = getString(R.string.invalid_input)
             }
         }
         buttonDivide.setOnClickListener {
             try {
-                val Num1Value = Num1Block.text.toString().toFloat()
-                val Num2Value = num2Block.text.toString().toFloat()
-                ResultNum = Num1Value / Num2Value
-                Result.text = ResultNum.toString()
+                val num1Value = num1Block.text.toString().toFloat()
+                val num2Value = num2Block.text.toString().toFloat()
+                resultNum = num1Value / num2Value
+                resultBlock.text = resultNum.toString()
             } catch (e: NumberFormatException) {
                 // Handle the case where the input is not a valid integer
-                Result.text = getString(R.string.invalid_input)
+                resultBlock.text = getString(R.string.invalid_input)
             }
         }
 
