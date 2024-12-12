@@ -5,4 +5,7 @@
     <string name="nametext">Введите Имя</string>
     <string name="button">Добро Пожаловать!</string>
     <string name="Calc">К калькулятору</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_calculator">Калькулятор</string>
+    <string name="invalid_input">Недопустимый ввод</string>
 </resources>
