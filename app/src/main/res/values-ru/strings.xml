@@ -5,4 +5,5 @@
     <string name="nametext">Введите Имя</string>
     <string name="button">Добро Пожаловать!</string>
     <string name="Calc">К калькулятору</string>
+    <string name="title_activity_calculator">Калькулятор</string>
 </resources>

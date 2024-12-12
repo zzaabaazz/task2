@@ -1,6 +1,9 @@
 package com.example.task2
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +31,16 @@ class Calculator : ComponentActivity() {
                 }
             }
         }*/
+        val Result = findViewById<TextView>(R.id.TextResult)
+        var ResultNum : Int?
+        val Num1Block = findViewById<EditText>(R.id.Num1)
+        val Num2Block = findViewById<EditText>(R.id.Num2)
+        val buttonPlus = findViewById<Button>(R.id.buttonPlus)
+        val Num1Value = Num1Block.text.toString().toInt()
+        val Num2Value = Num2Block.text.toString().toInt()
+        buttonPlus.setOnClickListener {
+        ResultNum = Num1Value + Num2Value
+            Result.setText("$ResultNum")
     }
 }
 @Composable
@@ -38,10 +51,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+/*@Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     Task2Theme {
         Greeting("Android")
     }
+}*/
 }
